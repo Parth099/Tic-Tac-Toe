@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tak Toe!</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/reset.css">
 
@@ -15,17 +19,44 @@
 <body>
     <main class="main-ttt-container">
         <h1 class="ttt-head-title">Tic Tak Toe</h1>
-        <div class="ttt-board ttt-border">
-            <div class="ttt-board-tile tile-top-left"  data-tile-num="1"></div>
-            <div class="ttt-board-tile tile-top-mid"   data-tile-num="2"></div>
-            <div class="ttt-board-tile tile-top-right" data-tile-num="3"></div>
-            <div class="ttt-board-tile tile-center-left" data-tile-num="4"></div>
-            <div class="ttt-board-tile tile-center" data-tile-num="5"></div>
-            <div class="ttt-board-tile tile-center-right" data-tile-num="6"></div>
-            <div class="ttt-board-tile tile-bottom-left"data-tile-num="7"></div>
-            <div class="ttt-board-tile tile-bottom-mid" data-tile-num="8"></div>
-            <div class="ttt-board-tile tile-bottom-right" data-tile-num="9"></div>
+        <div class="board-sc-flex">
+            <div class="ttt-board ttt-border">
+                <div class="ttt-board-tile tile-top-left"  data-tile-num="1"></div>
+                <div class="ttt-board-tile tile-top-mid"   data-tile-num="2"></div>
+                <div class="ttt-board-tile tile-top-right" data-tile-num="3"></div>
+                <div class="ttt-board-tile tile-center-left" data-tile-num="4"></div>
+                <div class="ttt-board-tile tile-center" data-tile-num="5"></div>
+                <div class="ttt-board-tile tile-center-right" data-tile-num="6"></div>
+                <div class="ttt-board-tile tile-bottom-left"data-tile-num="7"></div>
+                <div class="ttt-board-tile tile-bottom-mid" data-tile-num="8"></div>
+                <div class="ttt-board-tile tile-bottom-right" data-tile-num="9"></div>
+            </div>
+            <div class="score-card-cont">
+                <div class="score-card">
+                    <div>
+                        <div class="sc-info hasTurn pOne">
+                            <p>Player 1: <span id="p1-name"></span> </p>
+                            <img class="sc-img" src="img/human.png">
+                        </div>
+            
+                        <div class="sc-info pTwo">
+                            <p>Player 2: <span id="p2-name"></span> </p>
+                            <img class="sc-img" src="img/human.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="winner-cont">
+                    <p class="winner-text">X has WON</p>
+                </div>
+
+                <div class="reset-cont">
+                    <button class="reset-btn" type="button">Reset</button>
+                </div>
+            </div>
         </div>
+       
     </main>
 </body>
 </html>
+
