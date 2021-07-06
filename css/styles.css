@@ -14,14 +14,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: black;
 }
 body {
-  font-family: "chopsic";
+  font-family: 'Prompt', sans-serif;
   background-color: rgb(255, 255, 255);
 }
-
+.main-ttt-container{
+  display: none;
+}
 .ttt-head-title {
+  font-family: "chopsic", sans-serif;
   text-align: center;
   font-size: 5rem;
 }
@@ -80,8 +82,8 @@ body {
 .tile-center-left {
   border-left: none;
 }
-.tile-unfocus{
-  opacity: .3;
+.tile-unfocus {
+  opacity: 0.3;
 }
 .tile-center-right {
   border-right: none;
@@ -107,7 +109,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(23, 23, 24, 0.63),
     0 15px 40px rgba(166, 173, 201, 0.2);
-    transition: .5s;
+  transition: 0.5s;
 }
 .sc-info {
   display: flex;
@@ -121,52 +123,51 @@ body {
   font-family: "Quicksand", sans-serif;
   border-radius: 10px;
   transition: 5s;
-  opacity: .3;
+  opacity: 0.3;
 }
 .sc-img {
   width: 40px;
   height: 40px;
 }
-.hasTurn{
-    opacity: 1;
-    background: linear-gradient(270deg, #93b5ff, #7ad6c1);
-    background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    transition: 0.5s;
+.hasTurn {
+  opacity: 1;
+  background: linear-gradient(270deg, #93b5ff, #7ad6c1);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  transition: 0.5s;
 }
 .pOne {
-
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.pTwo{
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
+.pTwo {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 .board-sc-flex {
   margin-top: 50px;
   display: flex;
   justify-content: center;
 }
-.score-card-cont{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.score-card-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.winner-cont{
+.winner-cont {
   margin-top: 25px;
   align-self: flex-end;
   display: none;
@@ -180,9 +181,9 @@ body {
   text-align: center;
   font-family: "Quicksand", sans-serif;
 }
-.show-winner{
+.show-winner {
   display: flex;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .reset-btn {
@@ -197,16 +198,112 @@ body {
   border-radius: 10px;
 }
 
-.reset-cont{
+.reset-cont {
   text-align: center;
   margin-top: 25px;
 }
 
-.reset-btn:hover{
-  transition: .5s;
+.reset-btn:hover {
+  transition: 0.5s;
   background-color: #23d5ab;
 }
 
-.reset-btn:click{
+.reset-btn:click {
   background-color: #23d5ab;
+}
+
+@media only screen and (max-width: 750px) {
+  .board-sc-flex{
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ttt-board{
+    max-width: 333px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+  .ttt-head-title{
+    font-size: 3rem;
+  }
+}
+
+
+/*landing page */
+.fade-in{
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.landing-page{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing-page-head{
+
+  font-weight: 100;
+}
+.player{
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.naming-fields{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.input-landing{
+  width: 50%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: width 0.4s ease-in-out;
+}
+.input-landing[type=text]:focus {
+  width: 70%;
+}
+.submit-cont{
+  margin-top: 50px;
+}
+.submit-btn{
+  width: 100px;
+  background-color: #6afd6f;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit-btn:hover{
+  background-color: #ee7752;
+  color:white;
+  border: white 2px solid;
+}
+.ai-box{
+  font-size: 1rem;
 }
